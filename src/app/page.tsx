@@ -1,65 +1,318 @@
-import Image from "next/image";
+import StickyCTA from "@/components/StickyCTA";
+import {
+  Clock,
+  Award,
+  Microscope,
+  Globe,
+  ArrowRight,
+  Anchor,
+} from "lucide-react";
+
+const specs = [
+  {
+    icon: Clock,
+    title: 'The "24-Hour" Roasting Rule',
+    description: (
+      <>
+        Freshness is a science, not a buzzword. Our partner operates on a strict <strong className="text-[#1C1917]">&ldquo;Roasted to Order&rdquo; protocol</strong>: your 5lb bag is roasted and <strong className="text-[#1C1917]">shipped within 24 hours</strong> of being bagged. While other &ldquo;premium&rdquo; beans sit on shelves for weeks losing their aromatics, we ensure you receive yours at the <strong className="text-[#1C1917]">absolute peak of its flavor profile</strong>.
+      </>
+    ),
+  },
+  {
+    icon: Award,
+    title: "Multigenerational Roasting Mastery",
+    description: (
+      <>
+        You aren&rsquo;t buying from a startup. Your coffee is handled by an <strong className="text-[#1C1917]">industry pioneer with decades of experience</strong> at the highest level. They are an original winner of the <strong className="text-[#1C1917]">Roaster&rsquo;s Choice Award</strong>, presented by the Specialty Coffee Association of America, and remain a top-vetted, <strong className="text-[#1C1917]">featured favorite on DrinkTrade.com</strong>.
+      </>
+    ),
+  },
+  {
+    icon: Microscope,
+    title: 'The "Triple-Tested" Batch',
+    description: (
+      <>
+        Quality control is obsessive. Every lot is <strong className="text-[#1C1917]">cupped and scored three separate times</strong>: once at the farm, once at the port of arrival, and a final time at the roastery. If a batch doesn&rsquo;t meet their strict <strong className="text-[#1C1917]">&ldquo;specialty grade&rdquo; standards</strong> at any point, it is <strong className="text-[#1C1917]">rejected and never reaches your bag</strong>.
+      </>
+    ),
+  },
+  {
+    icon: Globe,
+    title: "Direct-Trade Heritage",
+    description: (
+      <>
+        This Colombian roast is the result of <strong className="text-[#1C1917]">long-standing, personal relationships</strong> with micro-lot estates. By traveling to the origin and <strong className="text-[#1C1917]">buying directly from the farmers</strong>, our roaster ensures the highest quality harvest while providing the farmers with <strong className="text-[#1C1917]">premium pay that significantly exceeds fair-trade standards</strong>.
+      </>
+    ),
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="min-h-screen">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-[#FAF7F5]/80 backdrop-blur-md border-b border-[#E2E8F0]">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span
+              className="text-xl tracking-tight uppercase"
+              style={{
+                fontFamily: "'Cabinet Grotesk', sans-serif",
+                fontWeight: 800,
+                letterSpacing: "-0.05em",
+              }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COFFEE
+            </span>
+          </div>
+          <div className="flex items-center gap-6">
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="/about"
+              className="text-sm font-medium text-[#1C1917]/60 hover:text-[#A67B5B] transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
+              About
+            </a>
+            <a
+              href="/login"
+              className="text-sm font-medium text-[#1C1917]/60 hover:text-[#A67B5B] transition-colors"
+            >
+              Login
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-28 pb-24 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="fade-in">
+            <h1
+              className="text-5xl md:text-7xl leading-[1.05] mb-6 text-[#1C1917]"
+              style={{
+                fontFamily: "'Cabinet Grotesk', sans-serif",
+                fontWeight: 800,
+                letterSpacing: "-0.05em",
+              }}
+            >
+              5 lbs of specialty coffee for{" "}
+              <span className="text-[#A67B5B]">$99.</span>{" "}
+              <span className="opacity-30">Stumptown charges $160.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-[#1C1917]/70 mb-10 max-w-xl leading-relaxed">
+              Wholesale pricing. Roasted to Order.{" "}
+              <br />
+              <span className="text-[#1C1917] font-medium">
+                Roaster of the Year winner.
+              </span>
+            </p>
+            <div id="hero-cta" className="flex flex-col sm:flex-row items-center gap-4">
+              <a
+                href="/reserve"
+                className="bg-[#1C1917] text-white px-8 py-4 text-lg font-bold rounded-xl hover:bg-[#A67B5B] transition-all flex items-center justify-center gap-2 shadow-lg shadow-stone-200"
+              >
+                Reserve your batch
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <span className="inline-flex items-center px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.1em] whitespace-nowrap bg-[#A67B5B]/5">
+                No credit card required
+              </span>
+            </div>
+            <div className="mt-8 flex items-center gap-3">
+              <div className="flex -space-x-3">
+                <img
+                  src="https://i.pravatar.cc/80?img=32"
+                  alt=""
+                  className="w-9 h-9 rounded-full border-2 border-[#FAF7F5] object-cover"
+                />
+                <img
+                  src="https://i.pravatar.cc/80?img=47"
+                  alt=""
+                  className="w-9 h-9 rounded-full border-2 border-[#FAF7F5] object-cover"
+                />
+                <img
+                  src="https://i.pravatar.cc/80?img=12"
+                  alt=""
+                  className="w-9 h-9 rounded-full border-2 border-[#FAF7F5] object-cover"
+                />
+                <img
+                  src="https://i.pravatar.cc/80?img=25"
+                  alt=""
+                  className="w-9 h-9 rounded-full border-2 border-[#FAF7F5] object-cover"
+                />
+                <img
+                  src="https://i.pravatar.cc/80?img=56"
+                  alt=""
+                  className="w-9 h-9 rounded-full border-2 border-[#FAF7F5] object-cover"
+                />
+              </div>
+              <p className="text-sm text-[#1C1917]/50">
+                <span className="font-semibold text-[#1C1917]/70">Millions</span> of happy coffee drinkers
+              </p>
+            </div>
+            <p className="hidden lg:block mt-10 text-xs text-[#1C1917]/40 uppercase tracking-[0.2em] font-bold">
+              5lbs lasts roughly 12 weeks for a couple drinking a cup a day.
+              Keep it in the freezer to preserve freshness.
+            </p>
+          </div>
+
+          <div
+            className="relative fade-in"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <div className="bg-[#F5F5F4] rounded-[48px] p-8 md:p-16 flex justify-center items-center overflow-hidden">
+              <img
+                src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/32525c36-4158-4f7b-af06-f0d19769a8e6/1773608939695-7edb74a8/CoffeeBag.png"
+                alt="5lb Coffee Bag"
+                className="w-full max-w-md drop-shadow-2xl hover:scale-[1.02] transition-transform duration-700"
+              />
+            </div>
+            <p className="lg:hidden mt-6 text-xs text-[#1C1917]/40 uppercase tracking-[0.2em] font-bold text-center">
+              5lbs lasts roughly 12 weeks for a couple drinking a cup a day.
+              Keep it in the freezer to preserve freshness.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section id="philosophy" className="py-24 bg-[#F5F5F4]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E2E8F0] rounded-full text-xs font-bold uppercase tracking-widest text-[#A67B5B] mb-8">
+            <Anchor className="w-3 h-3" />
+            Our Philosophy
+          </div>
+          <h2
+            className="text-3xl md:text-5xl leading-tight text-[#1C1917] mb-12"
+            style={{
+              fontFamily: "'Cabinet Grotesk', sans-serif",
+              fontWeight: 800,
+              letterSpacing: "-0.05em",
+            }}
+          >
+            &ldquo;We&rsquo;re not the roaster. We&rsquo;re your connection to
+            one.&rdquo;
+          </h2>
+          <p className="text-xl md:text-2xl text-[#1C1917]/80 leading-relaxed font-light">
+           By
+            partnering directly with this legendary roaster, we skip the retail
+            layer entirely and pass the savings straight to you.{" "}
+            <span className="text-[#1C1917] font-medium italic">
+              Same beans. Same roast. No brand tax.
+            </span>
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Social Proof */}
+      <section className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+            <blockquote className="fade-in">
+              <p className="text-lg md:text-xl text-[#1C1917]/80 leading-relaxed italic">
+                &ldquo;I have spent long periods of time <strong className="text-[#1C1917] not-italic">working in Ethiopia where coffee originated</strong>. For me [roaster name] is simply <strong className="text-[#1C1917] not-italic">the best</strong>.&rdquo;
+              </p>
+              <footer className="mt-4 flex items-center gap-3">
+                <img src="https://i.pravatar.cc/80?img=68" alt="" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-sm font-bold text-[#A67B5B] uppercase tracking-widest">Richard G.</span>
+              </footer>
+            </blockquote>
+
+            <blockquote className="fade-in" style={{ animationDelay: "0.1s" }}>
+              <p className="text-lg md:text-xl text-[#1C1917]/80 leading-relaxed italic">
+                &ldquo;This has been <strong className="text-[#1C1917] not-italic">my favorite coffee for years</strong>. Every
+                distributor has a &lsquo;Colombian&rsquo; coffee, but honestly,
+                I&rsquo;ve <strong className="text-[#1C1917] not-italic">never found any others to compare</strong> in simply delicious
+                full bodied taste.&rdquo;
+              </p>
+              <footer className="mt-4 flex items-center gap-3">
+                <img src="https://i.pravatar.cc/80?img=44" alt="" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-sm font-bold text-[#A67B5B] uppercase tracking-widest">Paulette K.</span>
+              </footer>
+            </blockquote>
+
+            <blockquote className="hidden md:block fade-in" style={{ animationDelay: "0.2s" }}>
+              <p className="text-lg md:text-xl text-[#1C1917]/80 leading-relaxed italic">
+                &ldquo;Good lord <strong className="text-[#1C1917] not-italic">this coffee is fantastic!</strong> I tried this with my
+                Trade Coffee subscription and this is a <strong className="text-[#1C1917] not-italic">must have coffee</strong>.
+                Highly recommend!&rdquo;
+              </p>
+              <footer className="mt-4 flex items-center gap-3">
+                <img src="https://i.pravatar.cc/80?img=15" alt="" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-sm font-bold text-[#A67B5B] uppercase tracking-widest">Tristan M.</span>
+              </footer>
+            </blockquote>
+
+            <blockquote className="hidden md:block fade-in" style={{ animationDelay: "0.3s" }}>
+              <p className="text-lg md:text-xl text-[#1C1917]/80 leading-relaxed italic">
+                &ldquo;When I serve this to guests and friends <strong className="text-[#1C1917] not-italic">it never fails that they comment</strong> and ask <strong className="text-[#1C1917] not-italic">what kind of coffee they are
+                drinking</strong>.&rdquo;
+              </p>
+              <footer className="mt-4 flex items-center gap-3">
+                <img src="https://i.pravatar.cc/80?img=29" alt="" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-sm font-bold text-[#A67B5B] uppercase tracking-widest">Katie D.</span>
+              </footer>
+            </blockquote>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Product Specs Section */}
+      <section id="specs" className="py-24">
+        <div className="max-w-3xl mx-auto px-6 space-y-20">
+          {specs.map((spec) => (
+            <div key={spec.title} className="fade-in">
+              <div className="flex items-center gap-3 mb-4">
+                <spec.icon className="w-5 h-5 text-[#A67B5B]" />
+                <h3
+                  className="text-2xl md:text-3xl text-[#1C1917]"
+                  style={{
+                    fontFamily: "'Cabinet Grotesk', sans-serif",
+                    fontWeight: 800,
+                    letterSpacing: "-0.05em",
+                  }}
+                >
+                  {spec.title}
+                </h3>
+              </div>
+              <p className="text-base md:text-lg text-[#1C1917]/60 leading-relaxed">
+                {spec.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-20 border-t border-[#E2E8F0] px-6 text-[#1C1917]/50">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+          <div>
+            <span
+              className="text-2xl text-[#1C1917] tracking-tight mb-2 block uppercase"
+              style={{
+                fontFamily: "'Cabinet Grotesk', sans-serif",
+                fontWeight: 800,
+                letterSpacing: "-0.05em",
+              }}
+            >
+              <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COFFEE
+            </span>
+            <p className="text-sm">
+              Your wholesale specialty coffee connection.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm">
+            <span className="text-[#1C1917]/30 text-xs">
+              A Jitterliss, Inc. company
+            </span>
+            <a href="/terms" className="font-medium hover:text-[#A67B5B] transition-colors">
+              Terms
+            </a>
+          </div>
+        </div>
+      </footer>
+
+      {/* Sticky CTA Footer */}
+      <StickyCTA />
     </div>
   );
 }
