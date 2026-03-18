@@ -23,24 +23,31 @@ export default function StickyCTA() {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-[60] bg-[#FAF7F5]/90 backdrop-blur-md border-t border-[#E2E8F0] transition-all duration-500 ${
+      className={`fixed bottom-0 left-0 right-0 z-[60] bg-[#1C1917] border-t border-white/10 transition-all duration-500 ${
         visible
           ? "translate-y-0 opacity-100"
           : "translate-y-full opacity-0"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-center sm:justify-between">
-        <div className="hidden sm:flex items-center gap-3">
-          <span className="text-sm font-medium text-[#1C1917]">
-            5 lbs — $99
+        <div className="hidden sm:flex items-center gap-4">
+          <span
+            className="text-lg font-bold text-white"
+            style={{
+              fontFamily: "'Cabinet Grotesk', sans-serif",
+              fontWeight: 800,
+              letterSpacing: "-0.03em",
+            }}
+          >
+            5 lbs — <span className="text-[#A67B5B]">$99</span>
           </span>
-          <span className="text-xs text-[#1C1917]/40">
+          <span className="text-sm text-white/40">
             Wholesale specialty coffee
           </span>
         </div>
         <Link
           href="/reserve"
-          className="bg-[#1C1917] text-white px-8 py-3.5 text-base font-bold rounded-full hover:bg-[#A67B5B] transition-all flex items-center gap-2 shadow-lg shadow-stone-200"
+          className="bg-[#A67B5B] text-white px-8 py-3.5 text-base font-bold rounded-full hover:bg-[#A67B5B]/80 transition-all flex items-center gap-2 shadow-lg shadow-black/20"
         >
           Reserve your batch
           <ArrowRight className="w-5 h-5" />

@@ -31,7 +31,7 @@ export default function ReservePage() {
             }}
             className="text-lg lg:text-2xl tracking-tight uppercase"
           >
-            <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COFFEE
+            <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B]">COFFEE</span><span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COM
           </Link>
         </div>
       </nav>
@@ -42,7 +42,11 @@ export default function ReservePage() {
         <div className="lg:w-1/2 flex items-center justify-center px-6 py-4 lg:p-24 bg-[#F5F5F4]">
           <div className="max-w-lg fade-in">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.2em] mb-6 lg:mb-8 bg-[#A67B5B]/5">
-              Priority Access Line
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
+              </span>
+              Limited to 100 orders per batch
             </div>
 
             <h1
@@ -104,15 +108,6 @@ export default function ReservePage() {
                   </span>
                 </div>
               </div>
-            </div>
-
-            {/* Subtle Image */}
-            <div className="mt-12 flex justify-center opacity-20">
-              <img
-                src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/32525c36-4158-4f7b-af06-f0d19769a8e6/1773608939695-7edb74a8/CoffeeBag.png"
-                alt="Coffee Bag Silhouette"
-                className="h-24 lg:h-32 object-contain grayscale"
-              />
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import StickyCTA from "@/components/StickyCTA";
+import HomepageTracker from "@/components/HomepageTracker";
 import {
   Clock,
   Award,
@@ -6,6 +7,7 @@ import {
   Globe,
   ArrowRight,
   Anchor,
+  Check,
 } from "lucide-react";
 
 const specs = [
@@ -50,6 +52,7 @@ const specs = [
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <HomepageTracker />
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#FAF7F5]/80 backdrop-blur-md border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -62,7 +65,7 @@ export default function Home() {
                 letterSpacing: "-0.05em",
               }}
             >
-              <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COFFEE
+              <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B]">COFFEE</span><span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COM
             </span>
           </div>
           <div className="flex items-center gap-6">
@@ -83,7 +86,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-28 pb-24 px-6">
+      <section id="hero" className="pt-28 pb-24 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="fade-in">
             <h1
@@ -117,6 +120,15 @@ export default function Home() {
                 No credit card required
               </span>
             </div>
+            <div className="mt-6 flex sm:inline-flex justify-center sm:justify-start items-center gap-2 px-4 py-2 rounded-xl bg-[#1C1917]/[0.03] border border-[#1C1917]/[0.06]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
+              </span>
+              <span className="text-xs font-bold text-[#1C1917]/70 uppercase tracking-wide">
+                Limited to 100 orders per batch
+              </span>
+            </div>
             <div className="mt-8 flex items-center gap-3">
               <div className="flex -space-x-3">
                 <img
@@ -146,7 +158,7 @@ export default function Home() {
                 />
               </div>
               <p className="text-sm text-[#1C1917]/50">
-                <span className="font-semibold text-[#1C1917]/70">Millions</span> of happy coffee drinkers
+                <span className="font-semibold text-[#1C1917]/70">Thousands</span> of happy coffee drinkers
               </p>
             </div>
             <p className="hidden lg:block mt-10 text-xs text-[#1C1917]/40 uppercase tracking-[0.2em] font-bold">
@@ -193,18 +205,134 @@ export default function Home() {
             one.&rdquo;
           </h2>
           <p className="text-xl md:text-2xl text-[#1C1917]/80 leading-relaxed font-light">
-           By
-            partnering directly with this legendary roaster, we skip the retail
-            layer entirely and pass the savings straight to you.{" "}
+            By partnering directly with this legendary roaster and{" "}
+            <a href="/about" className="text-[#A67B5B] hover:underline font-medium">
+              streamlining every layer of our business with AI
+            </a>
+            , we operate like Costco for specialty coffee.
             <span className="text-[#1C1917] font-medium italic">
-              Same beans. Same roast. No brand tax.
+            <br /> One product.
+            No overhead. Maximum value for you.
             </span>
           </p>
         </div>
       </section>
 
+      {/* Price Comparison */}
+      <section id="price-comparison" className="py-20 lg:py-28 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12 lg:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 bg-[#A67B5B]/5">
+              Same Quality. Different Price.
+            </div>
+            <h2
+              className="text-3xl lg:text-5xl text-[#1C1917]"
+              style={{
+                fontFamily: "'Cabinet Grotesk', sans-serif",
+                fontWeight: 800,
+                letterSpacing: "-0.05em",
+              }}
+            >
+              5lbs of specialty coffee.{" "}
+              <span className="text-[#A67B5B]">Side by side.</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {/* Stumptown */}
+            <div className="relative bg-white border border-[#E2E8F0] rounded-[32px] p-8 lg:p-10 shadow-sm">
+              <div className="text-center mb-6">
+                <img
+                  src="/Stumptown.png"
+                  alt="Stumptown Coffee"
+                  className="h-32 lg:h-44 object-contain mx-auto mb-4"
+                />
+                <h3
+                  className="text-sm font-bold uppercase tracking-widest text-[#1C1917]/50 mb-1"
+                >
+                  Stumptown Coffee
+                </h3>
+                <span
+                  className="text-3xl lg:text-4xl text-[#1C1917]/30"
+                  style={{
+                    fontFamily: "'Cabinet Grotesk', sans-serif",
+                    fontWeight: 800,
+                    letterSpacing: "-0.05em",
+                  }}
+                >
+                  $160
+                </span>
+              </div>
+              <div className="space-y-4">
+                {["Single Origin", "Direct Trade", "Small Mountain Farm", "Farm Elevation: 1,500 – 1,800 M"].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-[#1C1917]/60">
+                    <Check className="w-5 h-5 text-[#E2E8F0] shrink-0" />
+                    <span className="text-base lg:text-lg">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-5 border-t border-[#E2E8F0]">
+                <p className="text-xs text-[#1C1917]/30 uppercase tracking-widest font-bold">
+                  Stumptown 5lbs retail price
+                </p>
+              </div>
+            </div>
+
+            {/* Our Coffee */}
+            <div className="relative bg-[#1C1917] text-white border border-[#1C1917] rounded-[32px] p-8 lg:p-10 shadow-xl shadow-stone-900/20">
+              <div className="absolute -top-5 right-6 lg:right-8">
+                <span
+                  className="bg-[#A67B5B] text-white text-base lg:text-lg font-bold uppercase tracking-wider px-5 py-2.5 rounded-full shadow-lg shadow-[#A67B5B]/30"
+                  style={{
+                    fontFamily: "'Cabinet Grotesk', sans-serif",
+                    fontWeight: 800,
+                  }}
+                >
+                  Save $61
+                </span>
+              </div>
+              <div className="text-center mb-6">
+                <img
+                  src="/coffeebag_medium.png"
+                  alt="5LB Coffee"
+                  className="h-32 lg:h-44 object-contain mx-auto mb-4"
+                />
+                <h3
+                  className="text-sm font-bold uppercase tracking-widest text-white/50 mb-1"
+                >
+                  Our Coffee
+                </h3>
+                <span
+                  className="text-3xl lg:text-4xl text-[#A67B5B]"
+                  style={{
+                    fontFamily: "'Cabinet Grotesk', sans-serif",
+                    fontWeight: 800,
+                    letterSpacing: "-0.05em",
+                  }}
+                >
+                  $99
+                </span>
+              </div>
+              <div className="space-y-4">
+                {["Single Origin", "Direct Trade", "Small Mountain Farm", "Farm Elevation: 1,700 – 1,950 M"].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-white/80">
+                    <Check className="w-5 h-5 text-[#A67B5B] shrink-0" />
+                    <span className="text-base lg:text-lg">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-5 border-t border-white/10">
+                <p className="text-xs text-white/30 uppercase tracking-widest font-bold">
+                  Our price
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof */}
-      <section className="py-24">
+      <section id="social-proof" className="py-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             <blockquote className="fade-in">
@@ -258,6 +386,24 @@ export default function Home() {
 
       {/* Product Specs Section */}
       <section id="specs" className="py-24">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 bg-[#A67B5B]/5">
+              How We Do It
+            </div>
+            <h2
+              className="text-3xl lg:text-5xl text-[#1C1917]"
+              style={{
+                fontFamily: "'Cabinet Grotesk', sans-serif",
+                fontWeight: 800,
+                letterSpacing: "-0.05em",
+              }}
+            >
+              From farm to your door.{" "}
+              <span className="text-[#A67B5B]">No compromises.</span>
+            </h2>
+          </div>
+        </div>
         <div className="max-w-3xl mx-auto px-6 space-y-20">
           {specs.map((spec) => (
             <div key={spec.title} className="fade-in">
@@ -294,7 +440,7 @@ export default function Home() {
                 letterSpacing: "-0.05em",
               }}
             >
-              <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COFFEE
+              <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B]">COFFEE</span><span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COM
             </span>
             <p className="text-sm">
               Your wholesale specialty coffee connection.

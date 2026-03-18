@@ -2,6 +2,7 @@
 
 import { useState, FormEvent, useRef } from "react";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { usePostHog } from "posthog-js/react";
 
 const COFFEE_SOURCE_OPTIONS = [
   "Local roaster / coffee shop",
@@ -25,6 +26,7 @@ const STEPS = [
 ] as const;
 
 export default function ReserveForm() {
+  const posthog = usePostHog();
   const [step, setStep] = useState(0);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -37,18 +39,9 @@ export default function ReserveForm() {
   const [error, setError] = useState("");
   const savingStepRef = useRef<number | null>(null);
 
-  function validateEmail(value: string): string {
-    if (!value) return "";
-    const parts = value.split("@");
-    if (parts.length === 2 && parts[1] && !parts[1].includes(".")) {
-      return "Please enter a valid email with a domain (e.g. gmail.com)";
-    }
-    return "";
-  }
-
   function handleEmailChange(value: string) {
     setEmail(value);
-    setEmailError(validateEmail(value));
+    if (emailError) setEmailError("");
   }
 
   function handlePhoneChange(value: string) {
@@ -90,6 +83,8 @@ export default function ReserveForm() {
         return;
       }
 
+      posthog.capture("waitlist_email_submitted", { email });
+      posthog.identify(email, { email });
       setStep(1);
     } catch {
       setError("Something went wrong. Please try again.");
@@ -120,6 +115,11 @@ export default function ReserveForm() {
         setError(data.error || "Failed to save. Please try again.");
         setLoading(false);
         return;
+      }
+
+      posthog.capture("waitlist_survey_answered", { field, value: value || null, step: fromStep });
+      if (nextStep === STEPS.length) {
+        posthog.capture("waitlist_completed", { email });
       }
     } catch {
       setStep(fromStep);
@@ -197,7 +197,7 @@ export default function ReserveForm() {
 
   // Step 0: Email
   if (step === 0) {
-    const hasEmailError = emailError && email.length > 3;
+    const hasEmailError = !!emailError;
     return (
       <form onSubmit={handleEmailSubmit} className="space-y-5 lg:space-y-6">
         {progressDots}
@@ -209,6 +209,7 @@ export default function ReserveForm() {
             placeholder="alex@example.com"
             value={email}
             onChange={(e) => handleEmailChange(e.target.value)}
+            onFocus={() => posthog.capture("email_field_focused")}
             className={`${inputClass} ${hasEmailError ? "border-red-400 focus:border-red-400" : ""}`}
             autoFocus
           />
@@ -304,14 +305,6 @@ export default function ReserveForm() {
             )}
           </button>
         </div>
-        <button
-          type="button"
-          onClick={() => handleUpdate("where_buy_coffee", "", 1)}
-          disabled={loading}
-          className="w-full text-sm text-[#1C1917]/40 hover:text-[#1C1917]/60 transition-colors"
-        >
-          Skip
-        </button>
         {error && (
           <p className="text-sm text-red-600 text-center">{error}</p>
         )}
@@ -379,14 +372,6 @@ export default function ReserveForm() {
             )}
           </button>
         </div>
-        <button
-          type="button"
-          onClick={() => handleUpdate("how_heard_about_us", "", 2)}
-          disabled={loading}
-          className="w-full text-sm text-[#1C1917]/40 hover:text-[#1C1917]/60 transition-colors"
-        >
-          Skip
-        </button>
         {error && (
           <p className="text-sm text-red-600 text-center">{error}</p>
         )}
@@ -437,14 +422,6 @@ export default function ReserveForm() {
           )}
         </button>
       </div>
-      <button
-        type="button"
-        onClick={() => handleUpdate("phone_number", "", 3)}
-        disabled={loading}
-        className="w-full text-sm text-[#1C1917]/40 hover:text-[#1C1917]/60 transition-colors"
-      >
-        Skip
-      </button>
       {error && (
         <p className="text-sm text-red-600 text-center">{error}</p>
       )}

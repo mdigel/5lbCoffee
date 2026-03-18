@@ -51,11 +51,7 @@ export default function LoginPage() {
             }}
             className="text-lg lg:text-2xl tracking-tight uppercase"
           >
-            <span className="text-[#A67B5B]">GET</span>5LB
-            <span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">
-              .
-            </span>
-            COFFEE
+            <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B]">COFFEE</span><span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COM
           </Link>
         </div>
       </nav>
