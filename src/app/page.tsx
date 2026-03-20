@@ -293,7 +293,7 @@ export default function Home() {
               </div>
               <div className="text-center mb-6">
                 <img
-                  src="/coffeebag_medium.png"
+                  src="/CoffeeBag_medium.png"
                   alt="5LB Coffee"
                   className="h-32 lg:h-44 object-contain mx-auto mb-4"
                 />
