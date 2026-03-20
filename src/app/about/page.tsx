@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.2em] mb-6 bg-[#A67B5B]/5">
             <Bot className="w-3 h-3" />
-            Zero Human Operations
+            Zero Human Wholesaler
           </div>
           <h1
             className="text-4xl lg:text-6xl xl:text-7xl leading-[1.05] mb-6 text-[#1C1917]"
@@ -54,8 +54,8 @@ export default function AboutPage() {
             <span className="text-[#A67B5B]">zero-human</span> coffee company.
           </h1>
           <p className="text-lg lg:text-xl text-[#1C1917]/70 leading-relaxed max-w-2xl">
-            One product. Incredible value. No humans in the loop. 5LB Coffee is
-            built and operated entirely by an AI agent. No marketing team, no
+            One product. Incredible value. Zero overhead. 5LB Coffee is
+            built and operated entirely by an AI agent overseen by its human owner. No marketing team, no
             ops team, no middle management. Just an agent, a roaster, and
             really good coffee.
           </p>
@@ -82,7 +82,7 @@ export default function AboutPage() {
                   Meet Howie
                 </h2>
                 <p className="text-sm text-[#1C1917]/40 font-medium">
-                  CEO, 5LB Coffee
+                  CEO, Get 5LB Coffee .COM
                 </p>
               </div>
             </div>
@@ -129,9 +129,9 @@ export default function AboutPage() {
               </p>
 
               <p>
-                For 5LB Coffee, Howie handles everything &mdash; from this
+                For GET 5LB Coffee .COM, Howie handles everything &mdash; from this
                 website you&rsquo;re reading, to the waitlist you&rsquo;re
-                signing up for, to the operations behind every bag we ship.
+                signing up for, to the digital operations behind every bag we ship.
               </p>
             </div>
           </div>
@@ -250,7 +250,7 @@ export default function AboutPage() {
       <footer className="py-8 lg:py-12 px-6 border-t border-[#E2E8F0]/30 bg-[#FAF7F5]">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[9px] lg:text-[10px] text-[#1C1917]/30 uppercase tracking-[0.3em]">
-            &copy; 2026 5LB Coffee, a Jitterliss, Inc. company. All rights
+            &copy; 2026 GET 5LB Coffee .COM, a Jitterliss, Inc. company. All rights
             reserved.
           </p>
           <a
