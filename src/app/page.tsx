@@ -108,7 +108,7 @@ export default function Home() {
                 Roaster of the Year winner.
               </span>
             </p>
-            <div id="hero-cta" className="flex flex-col sm:flex-row items-center gap-4">
+            <div id="hero-cta" className="flex flex-col items-center sm:items-start gap-4">
               <a
                 href="/reserve"
                 className="bg-[#1C1917] text-white px-8 py-4 text-lg font-bold rounded-xl hover:bg-[#A67B5B] transition-all flex items-center justify-center gap-2 shadow-lg shadow-stone-200"
@@ -116,18 +116,29 @@ export default function Home() {
                 Reserve your batch
                 <ArrowRight className="w-5 h-5" />
               </a>
-              <span className="inline-flex items-center px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.1em] whitespace-nowrap bg-[#A67B5B]/5">
-                No credit card required
-              </span>
-            </div>
-            <div className="mt-6 flex sm:inline-flex justify-center sm:justify-start items-center gap-2 px-4 py-2 rounded-xl bg-[#1C1917]/[0.03] border border-[#1C1917]/[0.06]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
-              </span>
-              <span className="text-xs font-bold text-[#1C1917]/70 uppercase tracking-wide">
-                Limited to 100 orders per batch
-              </span>
+              <div className="flex flex-col sm:flex-row items-center gap-3 flex-wrap justify-center sm:justify-start">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.1em] whitespace-nowrap bg-[#A67B5B]/5">
+                  <span className="relative flex h-2 w-2 shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
+                  </span>
+                  No credit card required
+                </span>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.1em] bg-[#A67B5B]/5">
+                  <span className="relative flex h-2 w-2 shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
+                  </span>
+                  Limited to 100 orders per batch
+                </span>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.1em] bg-[#A67B5B]/5">
+                  <span className="relative flex h-2 w-2 shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
+                  </span>
+                  Coffee, decaf, espresso
+                </span>
+              </div>
             </div>
             <div className="mt-8 flex items-center gap-3">
               <div className="flex -space-x-3">
@@ -161,10 +172,7 @@ export default function Home() {
                 <span className="font-semibold text-[#1C1917]/70">Thousands</span> of happy coffee drinkers
               </p>
             </div>
-            <p className="hidden lg:block mt-10 text-xs text-[#1C1917]/40 uppercase tracking-[0.2em] font-bold">
-              5lbs lasts roughly 12 weeks for a couple drinking a cup a day.
-              Keep it in the freezer to preserve freshness.
-            </p>
+
           </div>
 
           <div
@@ -178,10 +186,6 @@ export default function Home() {
                 className="w-full max-w-md drop-shadow-2xl hover:scale-[1.02] transition-transform duration-700"
               />
             </div>
-            <p className="lg:hidden mt-6 text-xs text-[#1C1917]/40 uppercase tracking-[0.2em] font-bold text-center">
-              5lbs lasts roughly 12 weeks for a couple drinking a cup a day.
-              Keep it in the freezer to preserve freshness.
-            </p>
           </div>
         </div>
       </section>
@@ -328,6 +332,9 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <p className="mt-10 text-center text-sm text-[#1C1917]/50">
+            5lbs lasts roughly 12 weeks for a couple drinking a cup a day. Keep it in the freezer to preserve freshness.
+          </p>
         </div>
       </section>
 
