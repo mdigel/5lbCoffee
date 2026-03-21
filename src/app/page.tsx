@@ -332,8 +332,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <p className="mt-10 text-center text-sm text-[#1C1917]/50">
-            5lbs <strong className="text-[#1C1917]/70">lasts</strong> roughly <strong className="text-[#1C1917]/70">3 months</strong> for a couple drinking a cup a day. Keep it in the <strong className="text-[#1C1917]/70">freezer</strong> to preserve freshness.
+          <p className="mt-12 text-center text-2xl lg:text-3xl text-[#1C1917]/40 font-light leading-relaxed">
+            5lbs <strong className="text-[#1C1917]/70">lasts</strong> roughly <strong className="text-[#1C1917]/70">3 months</strong> for a couple drinking a cup a day. 
+            <br />Keep it in the <strong className="text-[#1C1917]/70">freezer</strong> to preserve freshness.
           </p>
         </div>
       </section>
@@ -341,13 +342,29 @@ export default function Home() {
       {/* Social Proof */}
       <section id="social-proof" className="py-24">
         <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 bg-[#A67B5B]/5">
+              What They Say
+            </div>
+            <h2
+              className="text-3xl lg:text-5xl text-[#1C1917]"
+              style={{
+                fontFamily: "'Cabinet Grotesk', sans-serif",
+                fontWeight: 800,
+                letterSpacing: "-0.05em",
+              }}
+            >
+              Exceptionally{" "}
+              <span className="text-[#A67B5B]">delicious.</span>
+            </h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             <blockquote className="fade-in">
               <p className="text-lg md:text-xl text-[#1C1917]/80 leading-relaxed italic">
                 &ldquo;I have spent long periods of time <strong className="text-[#1C1917] not-italic">working in Ethiopia where coffee originated</strong>. For me [roaster name] is simply <strong className="text-[#1C1917] not-italic">the best</strong>.&rdquo;
               </p>
               <footer className="mt-4 flex items-center gap-3">
-                <img src="https://i.pravatar.cc/80?img=68" alt="" className="w-10 h-10 rounded-full object-cover" />
+                <img src="https://i.pravatar.cc/80?img=11" alt="" className="w-10 h-10 rounded-full object-cover" />
                 <span className="text-sm font-bold text-[#A67B5B] uppercase tracking-widest">Richard G.</span>
               </footer>
             </blockquote>
@@ -372,7 +389,7 @@ export default function Home() {
                 Highly recommend!&rdquo;
               </p>
               <footer className="mt-4 flex items-center gap-3">
-                <img src="https://i.pravatar.cc/80?img=15" alt="" className="w-10 h-10 rounded-full object-cover" />
+                <img src="https://i.pravatar.cc/80?img=59" alt="" className="w-10 h-10 rounded-full object-cover" />
                 <span className="text-sm font-bold text-[#A67B5B] uppercase tracking-widest">Tristan M.</span>
               </footer>
             </blockquote>
@@ -383,7 +400,7 @@ export default function Home() {
                 drinking</strong>.&rdquo;
               </p>
               <footer className="mt-4 flex items-center gap-3">
-                <img src="https://i.pravatar.cc/80?img=29" alt="" className="w-10 h-10 rounded-full object-cover" />
+                <img src="https://i.pravatar.cc/80?img=49" alt="" className="w-10 h-10 rounded-full object-cover" />
                 <span className="text-sm font-bold text-[#A67B5B] uppercase tracking-widest">Katie D.</span>
               </footer>
             </blockquote>
@@ -407,7 +424,8 @@ export default function Home() {
               }}
             >
               Obsessively sourced.{" "}
-              <span className="text-[#A67B5B]"><br />Exceptionally delicious.</span>
+              <span className="text-[#A67B5B]"><br />Masterfully roasted.</span>{" "}
+              <br />Rigorously tested.
             </h2>
           </div>
         </div>
