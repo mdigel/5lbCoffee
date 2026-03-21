@@ -47,7 +47,10 @@ export default function StickyCTA() {
         </div>
         <Link
           href="/reserve"
-          className="bg-[#A67B5B] text-white px-8 py-3.5 text-base font-bold rounded-full hover:bg-[#A67B5B]/80 transition-all flex items-center gap-2 shadow-lg shadow-black/20"
+          className="relative bg-[#A67B5B] text-white px-8 py-3.5 text-base font-bold rounded-full hover:bg-[#A67B5B]/80 transition-all flex items-center gap-2 shadow-lg shadow-black/20"
+          style={{
+            animation: "pulse-glow 2s ease-in-out infinite",
+          }}
         >
           Reserve your batch
           <ArrowRight className="w-5 h-5" />
