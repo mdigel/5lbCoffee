@@ -205,7 +205,7 @@ export default function Home() {
               letterSpacing: "-0.05em",
             }}
           >
-            &ldquo;We&rsquo;re not the roaster. We&rsquo;re your connection to
+            &ldquo;We&rsquo;re not the roaster. <br />We&rsquo;re your connection to
             one.&rdquo;
           </h2>
           <p className="text-xl md:text-2xl text-[#1C1917]/80 leading-relaxed font-light">
@@ -238,7 +238,7 @@ export default function Home() {
               }}
             >
               5lbs of specialty coffee.{" "}
-              <span className="text-[#A67B5B]">Side by side.</span>
+              <span className="text-[#A67B5B]"><br />Side by side.</span>
             </h2>
           </div>
 
@@ -333,7 +333,7 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-10 text-center text-sm text-[#1C1917]/50">
-            5lbs lasts roughly 12 weeks for a couple drinking a cup a day. Keep it in the freezer to preserve freshness.
+            5lbs <strong className="text-[#1C1917]/70">lasts</strong> roughly <strong className="text-[#1C1917]/70">3 months</strong> for a couple drinking a cup a day. Keep it in the <strong className="text-[#1C1917]/70">freezer</strong> to preserve freshness.
           </p>
         </div>
       </section>
@@ -406,8 +406,8 @@ export default function Home() {
                 letterSpacing: "-0.05em",
               }}
             >
-              From farm to your door.{" "}
-              <span className="text-[#A67B5B]">No compromises.</span>
+              Obsessively sourced.{" "}
+              <span className="text-[#A67B5B]"><br />Exceptionally delicious.</span>
             </h2>
           </div>
         </div>
@@ -436,7 +436,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-20 border-t border-[#E2E8F0] px-6 text-[#1C1917]/50">
+      <footer className="pt-20 pb-32 border-t border-[#E2E8F0] px-6 text-[#1C1917]/50">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <div>
             <span
