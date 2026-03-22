@@ -16,10 +16,6 @@ export default function HomepageTracker() {
   const firedRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
-    posthog.capture("homepage_viewed");
-  }, [posthog]);
-
-  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -29,6 +25,9 @@ export default function HomepageTracker() {
             if (section && !firedRef.current.has(id)) {
               firedRef.current.add(id);
               posthog.capture(section.event);
+              if (id === "hero") {
+                posthog.capture("homepage_viewed");
+              }
             }
           }
         });
