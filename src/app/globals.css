@@ -57,11 +57,11 @@ html {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(166, 123, 91, 0), 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 0 rgba(166, 123, 91, 0), 0 0 0 0 rgba(166, 123, 91, 0), 0 10px 25px -5px rgba(0, 0, 0, 0.2);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 30px 12px rgba(166, 123, 91, 0.5), 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+    box-shadow: 0 0 40px 16px rgba(166, 123, 91, 0.6), 0 0 80px 30px rgba(166, 123, 91, 0.2), 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.07);
   }
 }

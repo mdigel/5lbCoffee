@@ -9,6 +9,7 @@ import {
   Anchor,
   Check,
 } from "lucide-react";
+import TrustSignals from "@/components/TrustSignals";
 
 const specs = [
   {
@@ -65,7 +66,7 @@ export default function Home() {
                 letterSpacing: "-0.05em",
               }}
             >
-              <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B]">COFFEE</span><span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COM
+              <span className="text-[#A67B5B]">GET</span> 5LB <span className="text-[#A67B5B]">COFFEE</span><span className="text-[#9CA3AF] text-[1.4em] leading-none relative -top-[0.05em]">.</span><span className="text-[#9CA3AF]">COM</span>
             </span>
           </div>
           <div className="flex items-center gap-6">
@@ -101,43 +102,29 @@ export default function Home() {
               <span className="text-[#A67B5B]">$99.</span>{" "}
               <span className="opacity-30">Stumptown charges $160.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-[#1C1917]/70 mb-10 max-w-xl leading-relaxed">
-              Wholesale pricing. Roasted to Order.{" "}
+            <p className="text-xl md:text-2xl text-[#1C1917]/70 mb-5 max-w-xl leading-relaxed">
+              Buy in bulk. <span className="text-[#1C1917] font-medium">Freeze it.</span>
               <br />
-              <span className="text-[#1C1917] font-medium">
-                Roaster of the Year winner.
-              </span>
+              Award winning fresh coffee for <span className="text-[#1C1917] font-medium">3 months.</span>
             </p>
+            <TrustSignals />
             <div id="hero-cta" className="flex flex-col items-center sm:items-start gap-4">
-              <a
-                href="/reserve"
-                className="bg-[#1C1917] text-white px-8 py-4 text-lg font-bold rounded-xl hover:bg-[#A67B5B] transition-all flex items-center justify-center gap-2 shadow-lg shadow-stone-200"
-              >
-                Reserve your batch
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <div className="flex flex-col sm:flex-row items-center gap-3 flex-wrap justify-center sm:justify-start">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.1em] whitespace-nowrap bg-[#A67B5B]/5">
-                  <span className="relative flex h-2 w-2 shrink-0">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
-                  </span>
-                  No credit card required
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.1em] bg-[#A67B5B]/5">
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
                 </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.1em] bg-[#A67B5B]/5">
-                  <span className="relative flex h-2 w-2 shrink-0">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
-                  </span>
-                  Limited to 100 orders per batch
-                </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.1em] bg-[#A67B5B]/5">
-                  <span className="relative flex h-2 w-2 shrink-0">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A67B5B] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A67B5B]"></span>
-                  </span>
-                  Coffee, decaf, espresso
-                </span>
+                Limited to 100 orders per batch
+              </span>
+              <div>
+                <a
+                  href="/reserve"
+                  className="bg-[#1C1917] text-white px-8 py-4 text-lg font-bold rounded-xl hover:bg-[#A67B5B] transition-all flex items-center justify-center gap-2 shadow-lg shadow-stone-200"
+                >
+                  Reserve your batch
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+                <p className="text-xs text-[#1C1917]/40 mt-2 text-center">No credit card required</p>
               </div>
             </div>
             <div className="mt-8 flex items-center gap-3">
@@ -169,7 +156,7 @@ export default function Home() {
                 />
               </div>
               <p className="text-sm text-[#1C1917]/50">
-                <span className="font-semibold text-[#1C1917]/70">Thousands</span> of happy coffee drinkers
+                <span className="font-semibold text-[#1C1917]/70">Thousands</span> of happy coffee drinkers for decades
               </p>
             </div>
 
@@ -334,7 +321,7 @@ export default function Home() {
           </div>
           <p className="mt-12 text-center text-2xl lg:text-3xl text-[#1C1917]/40 font-light leading-relaxed">
             5lbs <strong className="text-[#1C1917]/70">lasts</strong> roughly <strong className="text-[#1C1917]/70">3 months</strong> for a couple drinking a cup a day. 
-            <br />Keep it in the <strong className="text-[#1C1917]/70">freezer</strong> to preserve freshness.
+            <br />Keep it in the <strong className="text-[#1C1917]/70">freezer</strong> to preserve freshness & taste.
           </p>
         </div>
       </section>
@@ -465,7 +452,7 @@ export default function Home() {
                 letterSpacing: "-0.05em",
               }}
             >
-              <span className="text-[#A67B5B]">GET</span>5LB<span className="text-[#A67B5B]">COFFEE</span><span className="text-[#A67B5B] text-[1.4em] leading-none relative -top-[0.05em]">.</span>COM
+              <span className="text-[#A67B5B]">GET</span> 5LB <span className="text-[#A67B5B]">COFFEE</span><span className="text-[#9CA3AF] text-[1.4em] leading-none relative -top-[0.05em]">.</span><span className="text-[#9CA3AF]">COM</span>
             </span>
             <p className="text-sm">
               Your wholesale specialty coffee connection.

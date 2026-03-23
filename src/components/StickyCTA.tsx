@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function StickyCTA() {
@@ -45,16 +45,20 @@ export default function StickyCTA() {
             Wholesale specialty coffee
           </span>
         </div>
-        <Link
-          href="/reserve"
-          className="relative bg-[#A67B5B] text-white px-8 py-3.5 text-base font-bold rounded-full hover:bg-[#A67B5B]/80 transition-all flex items-center gap-2 shadow-lg shadow-black/20"
-          style={{
-            animation: "pulse-glow 2s ease-in-out infinite",
-          }}
-        >
-          Reserve your batch
-          <ArrowRight className="w-5 h-5" />
-        </Link>
+        <div className="flex items-center gap-3">
+          <ChevronRight className="w-5 h-5 text-[#A67B5B] animate-pulse hidden sm:block" />
+          <ChevronRight className="w-5 h-5 text-[#A67B5B] animate-pulse hidden sm:block -ml-4" />
+          <Link
+            href="/reserve"
+            className="relative bg-[#A67B5B] text-white px-8 py-3.5 text-base font-bold rounded-full hover:bg-[#A67B5B]/80 transition-all flex items-center gap-2 shadow-lg shadow-black/20"
+            style={{
+              animation: "pulse-glow 2s ease-in-out infinite",
+            }}
+          >
+            Reserve your batch
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
       </div>
     </div>
   );
