@@ -10,6 +10,7 @@ import {
   Check,
 } from "lucide-react";
 import TrustSignals from "@/components/TrustSignals";
+import FreezeInfo from "@/components/FreezeInfo";
 
 const specs = [
   {
@@ -103,7 +104,7 @@ export default function Home() {
               <span className="opacity-30">Stumptown charges $160.</span>
             </h1>
             <p className="text-xl md:text-2xl text-[#1C1917]/70 mb-5 max-w-xl leading-relaxed">
-              Buy in bulk. <span className="text-[#1C1917] font-medium">Freeze it.</span>
+              Buy in bulk. <span className="text-[#1C1917] font-medium">Freeze it.</span><FreezeInfo />
               <br />
               Award winning fresh coffee for <span className="text-[#1C1917] font-medium">3 months.</span>
             </p>
