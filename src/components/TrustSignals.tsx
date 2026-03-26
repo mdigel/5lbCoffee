@@ -11,6 +11,7 @@ import {
   Award,
   Heart,
   Coffee,
+  Package,
   Info,
   X,
 } from "lucide-react";
@@ -25,6 +26,7 @@ interface TrustItem {
 }
 
 const items: TrustItem[] = [
+  { icon: Package, text: "Try before you buy big" },
   { icon: Globe, text: "Variety of single origin roasts" },
   { icon: Microscope, text: "Mold tested" },
   {
@@ -120,7 +122,7 @@ export default function TrustSignals() {
                       <X className="w-4 h-4" />
                     </button>
                   </div>
-                  <p className="text-xs text-[#1C1917]/60 leading-relaxed">
+                  <p className="text-base text-[#1C1917]/60 leading-relaxed">
                     {item.infoContent}
                   </p>
                 </div>

@@ -44,7 +44,7 @@ export default function FreezeInfo() {
             </button>
           </div>
 
-          <div className="text-xs text-[#1C1917]/60 leading-relaxed space-y-3">
+          <div className="text-base text-[#1C1917]/60 leading-relaxed space-y-3">
             <p>
               <strong className="text-[#1C1917]/80">Yes.</strong> Freezing coffee
               can preserve flavor, but it depends on what you freeze and how you

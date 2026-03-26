@@ -3,9 +3,9 @@ import { ArrowLeft, Bell, ShieldCheck, CreditCard, Coffee } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Reserve Your Batch — 5LB Coffee",
+  title: "Reserve a Variety Sample Pack — 5LB Coffee",
   description:
-    "Secure your place in the next roasting cycle. Priority access to our $99 wholesale rate.",
+    "Try our award-winning specialty coffee before committing to 5 lbs. Reserve a variety sample pack today.",
 };
 
 export default function ReservePage() {
@@ -57,14 +57,12 @@ export default function ReservePage() {
                 letterSpacing: "-0.05em",
               }}
             >
-              Secure your place in the next{" "}
-              <span className="text-[#A67B5B]">roasting cycle.</span>
+              Try it before you{" "}
+              <span className="text-[#A67B5B]">buy big.</span>
             </h1>
 
             <p className="text-lg lg:text-xl text-[#1C1917]/70 mb-8 lg:mb-12 leading-relaxed">
-              We launch in micro-batches to strictly uphold our 24-hour
-              roasting protocol. Join the launch list for priority notification
-              and access to our $99 wholesale rate.
+              Reserve a variety sample pack to taste our award-winning Colombian roast. Love it? Upgrade to 5 lbs at our $99 wholesale rate and save for months.
             </p>
 
           </div>
@@ -89,7 +87,7 @@ export default function ReservePage() {
                     letterSpacing: "-0.05em",
                   }}
                 >
-                  Reserve Your Batch
+                  Reserve a Sample Pack
                 </h2>
               </div>
 

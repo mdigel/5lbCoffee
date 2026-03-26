@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import TrustSignals from "@/components/TrustSignals";
 import FreezeInfo from "@/components/FreezeInfo";
+import ThreeMonthsInfo from "@/components/ThreeMonthsInfo";
 
 const specs = [
   {
@@ -90,7 +91,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero" className="pt-28 pb-24 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="fade-in">
+          <div className="fade-in relative z-10">
             <h1
               className="text-5xl md:text-7xl leading-[1.05] mb-6 text-[#1C1917]"
               style={{
@@ -106,7 +107,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-[#1C1917]/70 mb-5 max-w-xl leading-relaxed">
               Buy in bulk. <span className="text-[#1C1917] font-medium">Freeze it.</span><FreezeInfo />
               <br />
-              Award winning fresh coffee for <span className="text-[#1C1917] font-medium">3 months.</span>
+              Award winning fresh coffee for <span className="text-[#1C1917] font-medium">2–3 months.</span><ThreeMonthsInfo />
             </p>
             <TrustSignals />
             <div id="hero-cta" className="flex flex-col items-center sm:items-start gap-4">
@@ -122,10 +123,10 @@ export default function Home() {
                   href="/reserve"
                   className="bg-[#1C1917] text-white px-8 py-4 text-lg font-bold rounded-xl hover:bg-[#A67B5B] transition-all flex items-center justify-center gap-2 shadow-lg shadow-stone-200"
                 >
-                  Reserve your batch
+                  Reserve a variety sample pack
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <p className="text-xs text-[#1C1917]/40 mt-2 text-center">No credit card required</p>
+                <p className="text-xs text-[#1C1917]/40 mt-2 text-center">No credit card required &middot; Try before you buy big</p>
               </div>
             </div>
             <div className="mt-8 flex items-center gap-3">
@@ -321,7 +322,7 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-12 text-center text-2xl lg:text-3xl text-[#1C1917]/40 font-light leading-relaxed">
-            5lbs <strong className="text-[#1C1917]/70">lasts</strong> roughly <strong className="text-[#1C1917]/70">3 months</strong> for a couple drinking a cup a day. 
+            5lbs <strong className="text-[#1C1917]/70">lasts</strong> roughly <strong className="text-[#1C1917]/70">2–3 months</strong> for a couple drinking a cup a day. 
             <br />Keep it in the <strong className="text-[#1C1917]/70">freezer</strong> to preserve freshness & taste.
           </p>
         </div>

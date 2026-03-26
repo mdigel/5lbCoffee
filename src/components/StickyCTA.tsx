@@ -42,7 +42,7 @@ export default function StickyCTA() {
             5 lbs — <span className="text-[#A67B5B]">$99</span>
           </span>
           <span className="text-sm text-white/40">
-            Wholesale specialty coffee
+            Try before you buy big
           </span>
         </div>
         <div className="flex items-center gap-3">
@@ -55,7 +55,7 @@ export default function StickyCTA() {
               animation: "pulse-glow 2s ease-in-out infinite",
             }}
           >
-            Reserve your batch
+            Reserve a sample pack
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

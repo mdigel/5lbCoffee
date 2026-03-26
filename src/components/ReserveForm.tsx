@@ -153,7 +153,7 @@ export default function ReserveForm() {
           You&rsquo;re on the list
         </h3>
         <p className="text-sm text-[#1C1917]/60">
-          We&rsquo;ll notify you when your spot comes available.
+          We&rsquo;ll notify you when it&rsquo;s time to buy.
         </p>
       </div>
     );
@@ -217,8 +217,8 @@ export default function ReserveForm() {
             <p className="text-[13px] text-red-500 ml-1">{emailError}</p>
           ) : (
             <p className="text-[13px] lg:text-sm text-[#1C1917]/60 leading-relaxed mt-3 ml-1">
-              We&rsquo;ll notify you when your spot in line to purchase
-              comes available. No marketing. No spam.
+              We&rsquo;ll notify you when your sample pack is ready.
+              No marketing. No spam.
             </p>
           )}
         </div>
