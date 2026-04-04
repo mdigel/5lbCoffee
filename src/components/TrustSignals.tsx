@@ -27,11 +27,11 @@ interface TrustItem {
 
 const items: TrustItem[] = [
   { icon: Package, text: "Try before you buy big" },
-  { icon: Globe, text: "Variety of single origin roasts" },
+  { icon: Globe, text: "Single origin variety" },
   { icon: Microscope, text: "Mold tested" },
   {
     icon: Mountain,
-    text: "High altitude small farms",
+    text: "High altitude farms",
     infoKey: "farms",
     infoTitle: "Direct-trade since day one",
     infoContent: (
@@ -65,7 +65,7 @@ const items: TrustItem[] = [
   { icon: Heart, text: "Ethical farming" },
   { icon: DollarSign, text: "Wholesale pricing" },
   { icon: Flame, text: "Roasted to order" },
-  { icon: Award, text: "Roaster of the Year winner" },
+  { icon: Award, text: "Roaster of the Year" },
   { icon: Coffee, text: "Coffee, decaf & espresso" },
 ];
 
