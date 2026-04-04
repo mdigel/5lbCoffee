@@ -129,8 +129,8 @@ export default function Home() {
                 <p className="text-xs text-[#1C1917]/40 mt-2 text-center">No credit card required &middot; Try before you buy big</p>
               </div>
             </div>
-            <div className="mt-8 flex items-center gap-3">
-              <div className="flex -space-x-3">
+            <div className="mt-8 flex items-center gap-4">
+              <div className="flex -space-x-2 shrink-0">
                 <img
                   src="https://i.pravatar.cc/80?img=32"
                   alt=""
