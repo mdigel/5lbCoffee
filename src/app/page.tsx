@@ -180,7 +180,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy Section */}
-      <section id="philosophy" className="py-24 bg-[#F5F5F4]">
+      <section id="philosophy" className="py-12 md:py-24 bg-[#F5F5F4]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E2E8F0] rounded-full text-xs font-bold uppercase tracking-widest text-[#A67B5B] mb-8">
             <Anchor className="w-3 h-3" />
@@ -203,16 +203,17 @@ export default function Home() {
               streamlining every layer of our business with AI
             </a>
             , we operate like Costco for specialty coffee.
-            <span className="text-[#1C1917] font-medium italic">
-            <br /> One product.
-            No overhead. Maximum value for you.
-            </span>
+          </p>
+          <p className="text-xl md:text-2xl text-[#1C1917] leading-relaxed font-medium italic mt-4">
+            One product.<br className="md:hidden" />
+            No overhead.<br className="md:hidden" />
+            Maximum value for you.
           </p>
         </div>
       </section>
 
       {/* Price Comparison */}
-      <section id="price-comparison" className="py-20 lg:py-28 px-6">
+      <section id="price-comparison" className="py-12 md:py-20 lg:py-28 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 lg:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 bg-[#A67B5B]/5">
@@ -322,14 +323,14 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-12 text-center text-2xl lg:text-3xl text-[#1C1917]/40 font-light leading-relaxed">
-            5lbs <strong className="text-[#1C1917]/70">lasts</strong> roughly <strong className="text-[#1C1917]/70">2–3 months</strong> for a couple drinking a cup a day. 
-            <br />Keep it in the <strong className="text-[#1C1917]/70">freezer</strong> to preserve freshness & taste.
+            5lbs <strong className="text-[#1C1917]/70">lasts</strong> <strong className="text-[#1C1917]/70">2–3 months</strong> for a couple drinking a cup a day. 
+            <br /> <br />Keep it in the <strong className="text-[#1C1917]/70">freezer</strong> to preserve freshness & taste.
           </p>
         </div>
       </section>
 
       {/* Social Proof */}
-      <section id="social-proof" className="py-24">
+      <section id="social-proof" className="py-12 md:py-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 bg-[#A67B5B]/5">
@@ -398,7 +399,7 @@ export default function Home() {
       </section>
 
       {/* Product Specs Section */}
-      <section id="specs" className="py-24">
+      <section id="specs" className="py-12 md:py-24">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16 lg:mb-20">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A67B5B]/30 text-[#A67B5B] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 bg-[#A67B5B]/5">
