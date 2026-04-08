@@ -187,7 +187,7 @@ export default function Home() {
             Our Philosophy
           </div>
           <h2
-            className="text-3xl md:text-5xl leading-tight text-[#1C1917] mb-12"
+            className="text-[1.625rem] md:text-5xl leading-tight text-[#1C1917] mb-12"
             style={{
               fontFamily: "'Cabinet Grotesk', sans-serif",
               fontWeight: 800,

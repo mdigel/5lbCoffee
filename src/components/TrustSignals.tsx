@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import {
   Globe,
   Microscope,
@@ -32,17 +33,25 @@ const items: TrustItem[] = [
   {
     icon: Mountain,
     text: "High altitude farms",
-    infoKey: "farms",
-    infoTitle: "Direct-trade since day one",
+    infoKey: "altitude",
+    infoTitle: "Why altitude matters",
     infoContent: (
-      <>
-        Our roasting partner works directly with farmers and small cooperatives,
-        ensuring every partner is fairly compensated — something they&rsquo;ve
-        done since the very beginning. They constantly travel the globe to meet
-        farmers and cup beans at origin, building long-standing personal
-        relationships. They were farm-to-cup before farm-to-table was even a
-        thing.
-      </>
+      <span className="space-y-2 block">
+        <span className="block">
+          At <strong className="text-[#1C1917]/80">1,200 to 2,200 meters above sea level</strong>, cooler temperatures slow the
+          maturation of the coffee cherry, allowing sugars and complex compounds to
+          develop over a longer period.
+        </span>
+        <span className="block">
+          The result is a denser bean with <strong className="text-[#1C1917]/80">more nuanced flavor, brighter acidity,
+          deeper sweetness</strong>, and a finish that lingers.
+        </span>
+        <span className="block">
+          <strong className="text-[#1C1917]/80">Most commodity coffee is grown at low altitudes</strong> for volume and speed.
+          Specialty coffee is grown high up, slowly, by farmers who have worked
+          the same mountain plots for generations. <strong className="text-[#1C1917]/80">That&rsquo;s not a coincidence.</strong>
+        </span>
+      </span>
     ),
   },
   {
@@ -51,18 +60,46 @@ const items: TrustItem[] = [
     infoKey: "pesticides",
     infoTitle: "Why not USDA Organic?",
     infoContent: (
-      <>
-        Our coffees are not USDA certified organic. However, our roasting
-        partner does extensive research on each source and farmer and does not
-        buy from large farms that use pesticides. His priority is to optimize for
-        flavor — and coffees that taste the best are usually grown by small
-        farmers who can&rsquo;t afford the certification costs and grow at high
-        altitudes, making it impractical to haul certified organic fertilizers.
-        So they do it naturally.
-      </>
+      <span className="space-y-2 block">
+        <span className="block">
+          Our coffees are <strong className="text-[#1C1917]/80">not USDA certified organic</strong>. However, our roasting
+          partner does extensive research on each source and farmer and <strong className="text-[#1C1917]/80">does not
+          buy from large farms that use pesticides</strong>.
+        </span>
+        <span className="block">
+          His priority is to optimize for flavor, and coffees that taste the best
+          are usually grown by small farmers who can&rsquo;t afford the
+          certification costs and grow at high altitudes, making it impractical to
+          haul certified organic fertilizers.
+        </span>
+        <span className="block">
+          <strong className="text-[#1C1917]/80">So they do it naturally.</strong>
+        </span>
+      </span>
     ),
   },
-  { icon: Heart, text: "Ethical farming" },
+  {
+    icon: Heart,
+    text: "Ethical farming",
+    infoKey: "farms",
+    infoTitle: "Direct-trade since day one",
+    infoContent: (
+      <span className="space-y-2 block">
+        <span className="block">
+          Our roasting partner works <strong className="text-[#1C1917]/80">directly with farmers and small cooperatives</strong>,
+          ensuring every partner is <strong className="text-[#1C1917]/80">fairly compensated</strong>. Something they&rsquo;ve
+          done since the very beginning.
+        </span>
+        <span className="block">
+          They constantly travel the globe to meet farmers and cup beans at
+          origin, building <strong className="text-[#1C1917]/80">long-standing personal relationships</strong>.
+        </span>
+        <span className="block">
+          <strong className="text-[#1C1917]/80">They were farm-to-cup before farm-to-table was even a thing.</strong>
+        </span>
+      </span>
+    ),
+  },
   { icon: DollarSign, text: "Wholesale pricing" },
   { icon: Flame, text: "Roasted to order" },
   { icon: Award, text: "Roaster of the Year" },
@@ -106,10 +143,15 @@ export default function TrustSignals() {
               >
                 <Info className="w-3.5 h-3.5" />
               </button>
-              {openTooltip === item.infoKey && (
+              {openTooltip === item.infoKey && createPortal(
+                <>
+                <div
+                  className="fixed inset-0 bg-black/30 z-50 md:hidden"
+                  onClick={() => setOpenTooltip(null)}
+                />
                 <div
                   ref={tooltipRef}
-                  className="absolute left-0 top-full mt-2 z-50 w-80 bg-white rounded-xl shadow-xl border border-[#E2E8F0] p-4"
+                  className="fixed inset-x-4 top-1/2 -translate-y-1/2 z-50 md:absolute md:inset-auto md:left-0 md:top-full md:mt-2 md:translate-y-0 w-auto md:w-80 bg-white rounded-xl shadow-xl border border-[#E2E8F0] p-4"
                 >
                   <div className="flex justify-between items-start gap-2 mb-2">
                     <span className="text-sm font-semibold text-[#1C1917]">
@@ -126,6 +168,8 @@ export default function TrustSignals() {
                     {item.infoContent}
                   </p>
                 </div>
+                </>,
+                document.body
               )}
             </>
           )}

@@ -39,7 +39,7 @@ export default function StickyCTA() {
               letterSpacing: "-0.03em",
             }}
           >
-            5 lbs — <span className="text-[#A67B5B]">$99</span>
+            5 lbs for <span className="text-[#A67B5B]">$99</span>
           </span>
           <span className="text-sm text-white/40">
             Try before you buy big

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Info, X } from "lucide-react";
 
 export default function ThreeMonthsInfo() {
@@ -27,10 +28,15 @@ export default function ThreeMonthsInfo() {
       >
         <Info className="w-4 h-4" />
       </button>
-      {open && (
+      {open && createPortal(
+        <>
+        <div
+          className="fixed inset-0 bg-black/30 z-[100] md:hidden"
+          onClick={() => setOpen(false)}
+        />
         <div
           ref={popupRef}
-          className="absolute left-0 top-full mt-2 z-[100] w-[300px] sm:w-[340px] bg-white rounded-xl shadow-xl border border-[#E2E8F0] p-5"
+          className="fixed inset-x-4 top-1/2 -translate-y-1/2 z-[100] md:absolute md:inset-auto md:left-0 md:top-full md:mt-2 md:translate-y-0 w-auto md:w-[340px] bg-white rounded-xl shadow-xl border border-[#E2E8F0] p-5"
         >
           <div className="flex justify-between items-start gap-2 mb-3">
             <span className="text-sm font-semibold text-[#1C1917]">
@@ -52,6 +58,8 @@ export default function ThreeMonthsInfo() {
             </p>
           </div>
         </div>
+        </>,
+        document.body
       )}
     </span>
   );

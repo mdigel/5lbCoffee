@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Info, X } from "lucide-react";
 
 export default function FreezeInfo() {
@@ -27,15 +28,17 @@ export default function FreezeInfo() {
       >
         <Info className="w-4 h-4" />
       </button>
-      {open && (
+      {open && createPortal(
+        <>
+        <div
+          className="fixed inset-0 bg-black/30 z-50 md:hidden"
+          onClick={() => setOpen(false)}
+        />
         <div
           ref={popupRef}
-          className="absolute left-0 top-full mt-2 z-50 w-[340px] sm:w-[400px] bg-white rounded-xl shadow-xl border border-[#E2E8F0] p-5 max-h-[70vh] overflow-y-auto"
+          className="fixed inset-x-4 top-1/2 -translate-y-1/2 z-50 md:absolute md:inset-auto md:left-0 md:top-full md:mt-2 md:translate-y-0 w-auto md:w-[400px] bg-white rounded-xl shadow-xl border border-[#E2E8F0] p-5 max-h-[70vh] overflow-y-auto"
         >
-          <div className="flex justify-between items-start gap-2 mb-3">
-            <span className="text-sm font-semibold text-[#1C1917]">
-              Does freezing coffee preserve the taste?
-            </span>
+          <div className="flex justify-end items-start mb-3">
             <button
               onClick={() => setOpen(false)}
               className="text-[#1C1917]/30 hover:text-[#1C1917] transition-colors shrink-0"
@@ -46,39 +49,19 @@ export default function FreezeInfo() {
 
           <div className="text-base text-[#1C1917]/60 leading-relaxed space-y-3">
             <p>
-              <strong className="text-[#1C1917]/80">Yes.</strong> Freezing coffee
-              can preserve flavor, but it depends on what you freeze and how you
-              freeze it.
+              <strong className="text-[#1C1917]/80">Yes. Freezing coffee
+             preserves flavor, </strong> but it depends on what you freeze and how you
+              freeze it. </p>
+              
+              <p>
+
+           Lower temperatures slow chemical reactions and aroma
+                loss.
             </p>
 
-            <div>
-              <p className="font-semibold text-[#1C1917]/70 mb-1">
-                Whole Bean Coffee (Best Option)
-              </p>
-              <p>
-                Coffee stales mainly due to oxidation and volatile aromatics
-                escaping. Lower temperatures slow chemical reactions and aroma
-                loss. Many high-end cafés store rare coffees frozen to maintain
-                peak flavor for months.
-              </p>
-            </div>
+            
 
-            <div>
-              <p className="font-semibold text-[#1C1917]/70 mb-1">
-                Best practices
-              </p>
-              <ul className="list-disc pl-4 space-y-0.5">
-                <li>Use airtight containers or vacuum-sealed bags</li>
-                <li>Freeze in small portions (only thaw once)</li>
-                <li>Do not repeatedly thaw and refreeze</li>
-                <li>
-                  Grind directly from frozen or let the container reach room temp
-                  before opening to prevent condensation
-                </li>
-              </ul>
-            </div>
-
-            <div>
+            <div className="bg-[#A67B5B]/5 rounded-lg p-3 border border-[#A67B5B]/10">
               <p className="font-semibold text-[#1C1917]/70 mb-1">
                 How long does it last?
               </p>
@@ -99,7 +82,7 @@ export default function FreezeInfo() {
                     <td className="py-1">~2–4 weeks</td>
                   </tr>
                   <tr className="border-b border-[#E2E8F0]/50">
-                    <td className="py-1 pr-2">Freezer, airtight</td>
+                    <td className="py-1 pr-2">Freezer</td>
                     <td className="py-1">~2–3 months</td>
                   </tr>
                   <tr>
@@ -111,44 +94,15 @@ export default function FreezeInfo() {
             </div>
 
             <div>
-              <p className="font-semibold text-[#1C1917]/70 mb-1">
-                Ground coffee?
-              </p>
               <p>
-                Ground coffee stales faster due to surface area. At room temp it
-                lasts ~3–7 days; frozen and airtight, ~2–4 weeks. Fresh grinding
-                whole beans is far better.
-              </p>
-            </div>
-
-            <div>
-              <p className="font-semibold text-[#1C1917]/70 mb-1">
-                The biggest mistake people make
-              </p>
-              <p>
-                Most flavor loss happens when people open the container
-                repeatedly, let humid air condense on the beans, or store coffee
-                in non-airtight bags. That&rsquo;s why coffee experts recommend
-                portioning before freezing.
-              </p>
-            </div>
-
-            <div className="bg-[#A67B5B]/5 rounded-lg p-3 border border-[#A67B5B]/10">
-              <p className="font-semibold text-[#1C1917]/70 mb-1">
-                The simple rule
-              </p>
-              <p>
-                Freeze whole beans in airtight portions — great idea.
-                <br />
-                Freeze ground coffee — marginal benefit.
-              </p>
-              <p className="mt-2 italic text-[#1C1917]/40">
-                Fun fact: Some competitive baristas grind beans straight from
-                frozen because it produces more uniform particle size.
+                Whole beans are the best option—many high-end cafés freeze rare
+                lots to keep peak flavor for months. Grind from frozen.
               </p>
             </div>
           </div>
         </div>
+        </>,
+        document.body
       )}
     </span>
   );
