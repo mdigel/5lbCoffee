@@ -107,7 +107,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-[#1C1917]/70 mb-5 max-w-xl leading-relaxed">
               Buy in bulk. <span className="text-[#1C1917] font-medium">Freeze it.</span><FreezeInfo />
               <br />
-              Award winning fresh coffee for <span className="text-[#1C1917] font-medium">2–3 months.</span><ThreeMonthsInfo />
+              Award winning fresh coffee for <span className="text-[#1C1917] font-medium">~3 months.</span><ThreeMonthsInfo />
             </p>
             <TrustSignals />
             <div id="hero-cta" className="flex flex-col items-center sm:items-start gap-4">
