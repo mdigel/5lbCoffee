@@ -104,7 +104,7 @@ export default function Home() {
               <span className="text-[#A67B5B]">$99.</span>{" "}
               <span className="opacity-30">Stumptown charges $160.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-[#1C1917]/70 mb-5 max-w-xl leading-relaxed">
+            <p className="text-base md:text-2xl text-[#1C1917]/70 mb-5 max-w-xl leading-relaxed">
               Buy in bulk. <span className="text-[#1C1917] font-medium">Freeze it.</span><FreezeInfo />
               <br />
               Award winning fresh coffee for <span className="text-[#1C1917] font-medium">~3 months.</span><ThreeMonthsInfo />
@@ -194,7 +194,7 @@ export default function Home() {
               letterSpacing: "-0.05em",
             }}
           >
-            &ldquo;We&rsquo;re not the roaster. <br />We&rsquo;re your connection to
+            &ldquo;We&rsquo;re not the roaster. <br className="hidden md:block" />We&rsquo;re your connection to
             one.&rdquo;
           </h2>
           <p className="text-xl md:text-2xl text-[#1C1917]/80 leading-relaxed font-light">
@@ -350,7 +350,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             <blockquote className="fade-in">
               <p className="text-lg md:text-xl text-[#1C1917]/80 leading-relaxed italic">
-                &ldquo;I have spent long periods of time <strong className="text-[#1C1917] not-italic">working in Ethiopia where coffee originated</strong>. For me [roaster name] is simply <strong className="text-[#1C1917] not-italic">the best</strong>.&rdquo;
+                &ldquo;I have spent long periods of time <strong className="text-[#1C1917] not-italic">working in Ethiopia where coffee originated</strong>. For me [our roaster] is simply <strong className="text-[#1C1917] not-italic">the best</strong>.&rdquo;
               </p>
               <footer className="mt-4 flex items-center gap-3">
                 <img src="https://i.pravatar.cc/80?img=11" alt="" className="w-10 h-10 rounded-full object-cover" />
