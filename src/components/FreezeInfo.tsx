@@ -1,66 +1,46 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { createPortal } from "react-dom";
+import { useRef } from "react";
 import { Info, X } from "lucide-react";
 
 export default function FreezeInfo() {
-  const [open, setOpen] = useState(false);
-  const popupRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    function handleClick(e: MouseEvent) {
-      if (popupRef.current && !popupRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, [open]);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   return (
     <span className="relative inline-flex items-center align-middle">
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => dialogRef.current?.showModal()}
         className="text-[#1C1917]/30 hover:text-[#A67B5B] transition-colors ml-1"
         aria-label="Learn about freezing coffee"
       >
         <Info className="w-4 h-4" />
       </button>
-      {open && createPortal(
-        <>
-        <div
-          className="fixed inset-0 bg-black/30 z-50 md:hidden"
-          onClick={() => setOpen(false)}
-        />
-        <div
-          ref={popupRef}
-          className="fixed inset-x-4 top-1/2 -translate-y-1/2 z-50 md:absolute md:inset-auto md:left-0 md:top-full md:mt-2 md:translate-y-0 w-auto md:w-[400px] bg-white rounded-xl shadow-xl border border-[#E2E8F0] p-5 max-h-[70vh] overflow-y-auto"
-        >
+      <dialog
+        ref={dialogRef}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) dialogRef.current?.close();
+        }}
+        className="backdrop:bg-black/30 bg-transparent p-0 m-auto max-w-[400px] w-[calc(100%-2rem)] open:flex items-center justify-center"
+      >
+        <div className="bg-white rounded-xl shadow-xl border border-[#E2E8F0] p-5 w-full max-h-[70vh] overflow-y-auto">
           <div className="flex justify-end items-start mb-3">
             <button
-              onClick={() => setOpen(false)}
+              onClick={() => dialogRef.current?.close()}
               className="text-[#1C1917]/30 hover:text-[#1C1917] transition-colors shrink-0"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
-
-          <div className="text-base text-[#1C1917]/60 leading-relaxed space-y-3">
+          <div className="text-sm text-[#1C1917]/60 leading-relaxed space-y-3">
             <p>
-              <strong className="text-[#1C1917]/80">Yes. Freezing coffee
-             preserves flavor, </strong> but it depends on what you freeze and how you
-              freeze it. </p>
-              
-              <p>
-
-           Lower temperatures slow chemical reactions and aroma
-                loss.
+              <strong className="text-[#1C1917]/80">
+                Yes. Freezing coffee preserves flavor,
+              </strong>{" "}
+              but it depends on what you freeze and how you freeze it.
             </p>
-
-            
-
+            <p>
+              Lower temperatures slow chemical reactions and aroma loss.
+            </p>
             <div className="bg-[#A67B5B]/5 rounded-lg p-3 border border-[#A67B5B]/10">
               <p className="font-semibold text-[#1C1917]/70 mb-1">
                 How long does it last?
@@ -92,7 +72,6 @@ export default function FreezeInfo() {
                 </tbody>
               </table>
             </div>
-
             <div>
               <p>
                 Whole beans are the best option—many high-end cafés freeze rare
@@ -101,9 +80,7 @@ export default function FreezeInfo() {
             </div>
           </div>
         </div>
-        </>,
-        document.body
-      )}
+      </dialog>
     </span>
   );
 }
